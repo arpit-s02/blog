@@ -1,6 +1,6 @@
 import {db} from '../firebaseConfig'
 import { collection, addDoc } from "firebase/firestore/lite";
-import {useFormInput} from '../hooks'
+import {useFormInput} from '../hooks';
 
 function CreatePost(){
     const title = useFormInput('');
@@ -11,9 +11,6 @@ function CreatePost(){
     const handleFormSubmit = async (e) => {
         e.preventDefault();
 
-        console.log('title', title.value);
-        console.log('subTitle', subTitle.value);
-        console.log('content', content.value);
         await addDoc(col, {
             title: title.value,
             subTitle: subTitle.value,
